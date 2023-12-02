@@ -4,7 +4,7 @@ import React from 'react';
 import EmailFeedbackData from '@/components/EmailFeedbackData';
 
 const sendEmail = async (formData: FormData) => {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
     const fullName = formData.get('fullName');
     const telegram = formData.get('telegram');
     const email = formData.get('emailForm');
