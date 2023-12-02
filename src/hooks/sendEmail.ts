@@ -4,7 +4,7 @@ import React from 'react';
 import EmailFeedbackData from '@/components/EmailFeedbackData';
 
 const sendEmail = async (formData: FormData) => {
-    const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const fullName = formData.get('fullName');
     const telegram = formData.get('telegram');
     const email = formData.get('emailForm');
@@ -13,7 +13,7 @@ const sendEmail = async (formData: FormData) => {
     try {
         await resend.emails.send({
             from: 'Train Courses <onboarding@resend.dev>',
-            to: 'kyrychenko.dmytro.v@gmail.com',
+            to: 'test.resend12@gmail.com',
             subject: 'Form Data',
             reply_to: email as string,
             react: React.createElement(EmailFeedbackData, {
