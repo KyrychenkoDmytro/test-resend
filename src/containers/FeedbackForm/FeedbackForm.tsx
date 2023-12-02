@@ -2,6 +2,7 @@
 
 import styles from './FeedbackForm.module.scss';
 import { useState } from 'react';
+import { sendEmail } from '../../hooks';
 
 const FeedbackForm = () => {
     const [fullName, setFullName] = useState('');
@@ -9,18 +10,17 @@ const FeedbackForm = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    const handleSubmit = async (event: any) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         const formData = new FormData();
         formData.append('fullName', fullName);
         formData.append('telegram', telegram);
         formData.append('emailForm', email);
         formData.append('message', message);
-       
-        
+
+
         try {
-            console.log(formData);
-            // await sendEmail(formData);
+            sendEmail(formData);
             // setFullName('');
             // setTelegram('');
             // setEmail('');
@@ -40,7 +40,6 @@ const FeedbackForm = () => {
                     </p>
                     <form
                         className={styles.form}
-                        // action={sendEmail}
                         onSubmit={handleSubmit}
                     >
                         <div className={styles.full_name}>
