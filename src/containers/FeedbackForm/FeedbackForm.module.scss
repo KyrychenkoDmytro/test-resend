@@ -1,0 +1,105 @@
+@import '../../scss/buttons';
+
+.root {
+    padding: 100px 0;
+    margin: 0 auto;
+    border-radius: 8px 8px 0px 0px;
+    background: url(../../../public/images/bg-feedback.png) center center / cover no-repeat;
+}
+.wrapper {
+    max-width: 682px;
+    margin: 0 auto;
+}
+.title {
+    @extend %h3;
+    color: $clr-light-beige;
+    margin-bottom: 20px;
+}
+.text {
+    @extend %h6;
+    color: $clr-white;
+    margin-bottom: 36px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 610px;
+}
+.label {
+    @extend %h6;
+    color: $clr-white;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.input {
+    height: 73px;
+    width: 100%;
+    input,
+    textarea {
+        width: inherit;
+        height: inherit;
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-size: 20px;
+        color: $clr-white;
+        background-color: transparent;
+        border: 1px solid $btn-bg-light-beige;
+        cursor: pointer;
+        outline: none;
+        &:focus {
+            border: 2px solid $clr-light-beige;
+        }
+    }
+}
+.message {
+    .input {
+        height: 140px;
+    }
+}
+.submit {
+    @extend %btn-m-white-primary;
+}
+
+@media (max-width: 991.98px) {
+    .root {
+        padding: 100px 15px;
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        padding: 80px 15px;
+    }
+    .title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .text {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+    .label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .input {
+        height: 56px;
+        input,
+        textarea {
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    }
+    .message {
+        .input {
+            height: 94px;
+        }
+    }
+    .submit {
+        border-radius: 4px;
+    }
+}

@@ -1,0 +1,158 @@
+// bg
+$bg-violet: #C7BDE2;
+$bg-dark-violet: #8C75BF;
+$bg-light-violet: #EFE2FF;
+$bg-back-lilac: #F2F0FF;
+$bg-back-mint: #F4F8F6;
+$bg-back-sky: #EDF2FB;
+$bg-back-pinky: #F5EDF6;
+
+// text color
+$clr-white: #FDFCFF;
+$clr-light-beige: #FBEBD8;
+$clr-beige: #FFE0BC;
+$clr-dark-violet: #524A67;
+$clr-lilac: #C2A4E8;
+$clr-dark-lilac: #9474BB;
+$clr-mint: #93B7A8;
+$clr-dark-mint: #809D91;
+$clr-sky: #A3BFEA;
+$clr-dark-sky: #88A5D1;
+$clr-pinky: #CFA6D3;
+$clr-dark-pinky: #AD86B0;
+
+// button color
+$btn-bg-white: #FDFCFF;
+$btn-bg-grey: #D1D1D1;
+$btn-bg-light-beige: #FBEBD8;
+$btn-bg-beige: #FFE0BC;
+$btn-bg-light-lilac: #EFE2FF;
+$btn-bg-lilac: #C2A4E8;
+$btn-bg-dark-lilac: #9474BB;
+$btn-bg-light-mint: #DFECE7;
+$btn-bg-mint: #93B7A8;
+$btn-bg-dark-mint: #809D91;
+$btn-bg-light-sky: #E3ECF9;
+$btn-bg-sky: #A3BFEA;
+$btn-bg-dark-sky: #88A5D1;
+$btn-bg-light-pinky: #F8E3F9;
+$btn-bg-pinky: #CFA6D3;
+$btn-bg-dark-pinky: #AD86B0;
+
+// typography desktop
+%h1 {
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%h2 {
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%h3 {
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%h4 {
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%h5 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%h6 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+%h7 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+%h8 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+%h9 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+%h10 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+%h11 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+//mobile
+@media (max-width: 759.98px) {
+    %h1 {
+        font-size: 36px;
+    }
+
+    %h2 {
+        font-size: 32px;
+    }
+    
+    %h3 {
+        font-size: 28px;
+    }
+    
+    %h4 {
+        font-size: 24px;
+    }
+    
+    %h5 {
+        font-family: 'Wix Madefor Display', sans-serif;
+        font-size: 20px;
+    }
+    
+    %h6 {
+        font-size: 18px;
+    }
+    
+    %h7 {
+        font-size: 16px;
+        line-height: normal;
+    }
+    
+    %h8 {
+        font-size: 14px;
+    }
+    
+    %h9 {
+        font-size: 12px;
+    }
+    
+    %h10 {
+        font-size: 10px;
+    }
+}
