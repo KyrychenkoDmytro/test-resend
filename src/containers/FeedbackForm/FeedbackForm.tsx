@@ -3,6 +3,7 @@
 import styles from './FeedbackForm.module.scss';
 import { useState } from 'react';
 import { sendEmail } from '../../hooks';
+import { POST } from '@/app/api/send/route';
 
 const FeedbackForm = () => {
     const [fullName, setFullName] = useState('');
@@ -20,7 +21,7 @@ const FeedbackForm = () => {
 
 
         try {
-            sendEmail(formData);
+            POST(formData);
             // setFullName('');
             // setTelegram('');
             // setEmail('');

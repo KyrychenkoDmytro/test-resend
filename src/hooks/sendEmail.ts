@@ -1,10 +1,12 @@
-'use server';
+// 'use server';
 import { Resend } from 'resend';
 import React from 'react';
 import EmailFeedbackData from '@/components/EmailFeedbackData';
 
+const resend = new Resend('re_Vw8Lz8GE_PEDewynGQSq8g3Fc8XnJ7Wdj');
+
 const sendEmail = async (formData: FormData) => {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+  
     const fullName = formData.get('fullName');
     const telegram = formData.get('telegram');
     const email = formData.get('emailForm');
