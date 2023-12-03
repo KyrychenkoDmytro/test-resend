@@ -2,7 +2,7 @@
 
 import styles from './FeedbackForm.module.scss';
 import { useState } from 'react';
-import { sendEmail } from '../../hooks';
+// import { sendEmail } from '../../hooks';
 
 const FeedbackForm = () => {
     const [fullName, setFullName] = useState('');
@@ -20,7 +20,16 @@ const FeedbackForm = () => {
 
 
         try {
-            sendEmail(formData);
+            const fetchData = async () => {
+                const response = await fetch('https://test-resend.vercel.app/api/send', {
+                    method: 'POST',
+                    // body: formData,
+                })
+                const data = await response.json();
+                return data;
+            }
+            console.log(fetchData());
+
             // setFullName('');
             // setTelegram('');
             // setEmail('');
