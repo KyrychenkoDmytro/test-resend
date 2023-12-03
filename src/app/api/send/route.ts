@@ -1,5 +1,5 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
-'use server';
+// 'use server';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import React from 'react';
