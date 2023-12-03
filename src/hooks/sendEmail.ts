@@ -1,4 +1,4 @@
-// 'use server';
+'use server';
 import { Resend } from 'resend';
 import React from 'react';
 import EmailFeedbackData from '@/components/EmailFeedbackData';
