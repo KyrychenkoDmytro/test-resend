@@ -1,8 +1,7 @@
 'use client';
 
 import styles from './FeedbackForm.module.scss';
-import { useState } from 'react';
-// import { sendEmail } from '../../hooks';
+import { useState, FormEvent } from 'react';
 
 const FeedbackForm = () => {
     const [fullName, setFullName] = useState('');
@@ -12,28 +11,25 @@ const FeedbackForm = () => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        const formData = new FormData();
-        formData.append('fullName', fullName);
-        formData.append('telegram', telegram);
-        formData.append('emailForm', email);
-        formData.append('message', message);
-
 
         try {
             const fetchData = async () => {
-                const response = await fetch('https://test-resend.vercel.app/api/send', {
+                const response = await fetch('/api/send', {
                     method: 'POST',
-                    // body: formData,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ fullName, telegram, email, message }),
                 })
                 const data = await response.json();
+                console.log(data);
                 return data;
             }
-            console.log(fetchData());
-
-            // setFullName('');
-            // setTelegram('');
-            // setEmail('');
-            // setMessage('');
+            const data = fetchData();
+            setFullName('');
+            setTelegram('');
+            setEmail('');
+            setMessage('');
         } catch (error) {
             console.error('Error sending email:', error);
         }
@@ -78,7 +74,7 @@ const FeedbackForm = () => {
                             <div className={styles.input}>
                                 <input
                                     value={email}
-                                    name='emailForm'
+                                    name='email'
                                     onChange={(e) => setEmail(e.target.value)}
                                     type="email"
                                     required
