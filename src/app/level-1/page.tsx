@@ -1,4 +1,4 @@
-import FirstLevel from '@/pages/FirstLevel';
+import FirstLevel from '@/allPages/FirstLevel';
 
 const FirstLevelPage = () => {
 

@@ -1,4 +1,4 @@
-import ThirdLevel from '@/pages/ThirdLevel';
+import ThirdLevel from '@/allPages/ThirdLevel';
 
 const ThirdLevelPage = () => {
 

@@ -1,7 +1,7 @@
-import MainPage from '@/pages/MainPage/MainPage';
+import MainPage from '@/allPages/MainPage/MainPage';
 
 export default function Home() {
-  
+
   return (
     <MainPage />
   )

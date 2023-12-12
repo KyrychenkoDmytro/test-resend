@@ -1,4 +1,4 @@
-import Corporate from "@/pages/Corporate";
+import Corporate from "@/allPages/Corporate";
 
 const CorporatePage = () => {
 
