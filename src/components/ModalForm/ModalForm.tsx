@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './ModalForm.module.scss';
 import data from './modalData';
 import React, { FC, useEffect, useState } from 'react';
