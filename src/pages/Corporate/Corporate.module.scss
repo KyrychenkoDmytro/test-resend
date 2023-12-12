@@ -1,0 +1,17 @@
+@import '../../scss/buttons';
+
+.root {
+    background-color: $bg-back-lilac;
+    min-height: 100vh;
+    padding: 40px 0 0;
+    h2  {
+        text-align: center;
+        margin: 0 0 80px;
+        color: $clr-lilac;
+        font-size: 40px;
+    }
+    button {
+        @extend %btn-l-lilac-primary;
+        margin: 0 auto;
+    }
+}

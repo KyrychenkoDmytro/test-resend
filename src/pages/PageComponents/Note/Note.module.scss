@@ -1,0 +1,83 @@
+@import '../../../scss/variables';
+
+.root {
+    padding: 120px 0 120px;
+    &.lilac {
+        .wrapper {
+            border: 2px solid $btn-bg-lilac;
+        }
+    }
+    &.mint {
+        .wrapper {
+            border: 2px solid $btn-bg-mint;
+        }
+    }
+    &.sky {
+        .wrapper {
+            border: 2px solid $btn-bg-sky;
+        }
+    }
+    &.pinky {
+        .wrapper {
+            border: 2px solid $btn-bg-pinky;
+        }
+    }
+}
+.wrapper {
+    position: relative;
+    padding: 40px 40px 40px 144px;
+    border-radius: 10px;
+    background-color: $btn-bg-white;
+}
+.image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+}
+.text {
+    @extend %h7;
+    color: $clr-dark-violet;
+    span {
+        font-weight: 700;
+    }
+    div{
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .root {
+        padding: 100px 0 100px;
+    }
+    .text {
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        span {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        padding: 80px 0 80px;
+    }
+    .wrapper {
+        padding: 80px 20px 20px 20px;
+        border-radius: 8px;
+    }
+    .image {
+        top: 0px;
+        left: 0px;
+        transform: translateY(0) scale(0.6);
+    }
+    .text {
+       font-size: 14px;
+    }
+}

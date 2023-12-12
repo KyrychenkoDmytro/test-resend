@@ -1,37 +1,52 @@
 'use client';
 
 import styles from './FeedbackForm.module.scss';
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const FeedbackForm = () => {
     const [fullName, setFullName] = useState('');
     const [telegram, setTelegram] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const emailRegex = /^[^\s@]{2,}@[^\s@]{2,}\.[^\s@]{2,}$/;
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
+        const header = 'Головна сторінка.'
 
         try {
+            if (!emailRegex.test(email)) {
+                toast.error('Будь ласка, введіть коректну адресу електронної пошти.');
+                return;
+            }
+
             const fetchData = async () => {
-                const response = await fetch('/api/send', {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/send-mail`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ fullName, telegram, email, message }),
+                    body: JSON.stringify({ fullName, telegram, email, message, header }),
                 })
+                if (response.ok) {
+                    toast.success('ДЯКУЄМО ЗА РЕЄСТРАЦІЮ!');
+                    setFullName('');
+                    setTelegram('');
+                    setEmail('');
+                    setMessage('');
+                } else {
+                    console.log(`status: ${response.status}(${response.statusText})`);
+                    toast.error(`Помилка при відправленні форми: ${response.statusText}`);
+                }
                 const data = await response.json();
-                console.log(data);
                 return data;
             }
             const data = fetchData();
-            setFullName('');
-            setTelegram('');
-            setEmail('');
-            setMessage('');
-        } catch (error) {
-            console.error('Error sending email:', error);
+
+        } catch (error: any) {
+            console.error('Помилка при відправленні форми: ', error);
+            toast.error(`Помилка при відправленні форми: ${error}`);
         }
     };
 
@@ -48,7 +63,7 @@ const FeedbackForm = () => {
                         onSubmit={handleSubmit}
                     >
                         <div className={styles.full_name}>
-                            <div className={styles.label}>прізвище та ім’я</div>
+                            <div className={styles.label}><span>* </span>прізвище та ім’я</div>
                             <div className={styles.input}>
                                 <input
                                     value={fullName}
@@ -59,24 +74,26 @@ const FeedbackForm = () => {
                             </div>
                         </div>
                         <div className={styles.telegram}>
-                            <div className={styles.label}>telegram</div>
+                            <div className={styles.label}><span>* </span>telegram</div>
                             <div className={styles.input}>
                                 <input
                                     value={telegram}
                                     name='telegram'
                                     onChange={(e) => setTelegram(e.target.value)}
                                     type="text"
+                                    placeholder='@example or https://t.me/example'
                                     required />
                             </div>
                         </div>
                         <div className={styles.email}>
-                            <div className={styles.label}>e-mail</div>
+                            <div className={styles.label}><span>* </span>e-mail</div>
                             <div className={styles.input}>
                                 <input
                                     value={email}
                                     name='email'
                                     onChange={(e) => setEmail(e.target.value)}
                                     type="email"
+                                    placeholder='example@gmail.com'
                                     required
                                 />
                             </div>
@@ -87,11 +104,12 @@ const FeedbackForm = () => {
                                 <textarea
                                     value={message}
                                     name='message'
+                                    placeholder='your message'
                                     onChange={(e) => setMessage(e.target.value)}
                                 />
                             </div>
                         </div>
-                        <button className={styles.submit}>Відправити</button>
+                        <button className={styles.submit} type="submit">Відправити</button>
                     </form>
                 </div>
             </div>

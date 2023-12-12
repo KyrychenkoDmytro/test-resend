@@ -1,0 +1,80 @@
+@import '../../scss/variables';
+
+.root {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.btn {
+    @extend %h9;
+    display: inline-block;
+    position: relative;
+    max-width: fit-content;
+    padding: 6px 14px 6px 6px;
+    color: $clr-white;
+    user-select: none;
+    background: none;
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 6px;
+        background: url('../../../public/icons/arrow.svg');
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%);
+    }
+    &:hover {
+        color: $clr-beige;
+    }
+}
+
+.content {
+    display: inline-flex;
+    max-width: fit-content;
+    min-width: 262px;
+    padding: 2px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;  
+    position: absolute;
+    top: 44px;
+    left: 6px;
+    border-radius: 0px 0px 10px 10px;
+    background: linear-gradient(101deg, rgba(255, 255, 255, 0.25) -46.87%, rgba(255, 255, 255, 0.00) 136.06%);
+    box-shadow: 5px 6px 18px 0px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(27px);
+    .option{
+        @extend %h9;
+        color: $clr-white;
+    }
+}
+
+@media (max-width: 1439.98px) {
+    .btn {
+        font-size: 24px;
+    }
+    .content {
+       background: none;
+       box-shadow: none;
+       backdrop-filter: none;
+       
+        .option{
+            @extend %h9;
+            color: $clr-white;
+        }
+    }
+}
+
+@media (max-width:759.98px) {
+    .btn {
+        font-size: 18px;
+    }
+    .content {
+         .option{
+             font-size: 14px;
+         }
+     }
+}

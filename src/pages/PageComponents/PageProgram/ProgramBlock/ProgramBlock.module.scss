@@ -1,0 +1,194 @@
+@import '../../../../scss/variables';
+
+.root {
+    background-color: $clr-white;
+    border-radius: 10px;
+    &.lilac {
+        box-shadow: 8px 8px 0px 0px $btn-bg-dark-lilac;
+        .title {
+            color: $clr-dark-lilac;
+            background-color: $btn-bg-light-lilac;
+        }
+        .ul {
+            li {
+                &::before {
+                    background-color: $btn-bg-lilac;
+                }
+            }
+        }
+    }
+    &.mint {
+        box-shadow: 8px 8px 0px 0px $btn-bg-dark-mint;
+        .title {
+            color: $clr-dark-mint;
+            background-color: $btn-bg-light-mint;
+        }
+        .ul {
+            li {
+                &::before {
+                    background-color: $btn-bg-mint;
+                }
+            }
+        }
+    }
+    &.sky {
+        box-shadow: 8px 8px 0px 0px $btn-bg-dark-sky;
+        .title {
+            color: $clr-dark-sky;
+            background-color: $btn-bg-light-sky;
+        }
+        .ul {
+            li {
+                &::before {
+                    background-color: $btn-bg-sky;
+                }
+            }
+        }
+    }
+    &.pinky {
+        box-shadow: 8px 8px 0px 0px $btn-bg-dark-pinky;
+        .title {
+            color: $clr-dark-pinky;
+            background-color: $btn-bg-light-pinky;
+        }
+        .ul {
+            li {
+                &::before {
+                    background-color: $btn-bg-pinky;
+                }
+            }
+        }
+    }
+    &:first-child.mint .title {
+        padding-right: 200px;
+    }
+}
+.title {
+    &.open .arrow{
+        transform: rotate(180deg) translateY(50%);
+    }
+    @extend %h7;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 700;
+    padding: 16px 24px;
+    .arrow {
+        display: none;
+        width: 14px;
+        height: 9px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        transition: transform 0.15s ease;
+    }
+}
+.ul {
+    padding: 20px 52px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+        @extend %h9;
+        color: $clr-dark-violet;
+        position: relative;
+        max-width: 85%;
+        &::before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: -28px;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+@media (max-width: 1439.98px) {
+    .root {
+        &:nth-child(2).pinky .title {
+            min-height: 84px;
+        }
+    }
+    .ul {
+        padding: 20px 20px 20px 52px;
+        li {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .root {
+        &:first-child.mint .title {
+            padding-right: 20px;
+            min-height: 110px;
+        }
+        &:first-child.sky .title,
+        &:nth-child(3).sky .title,
+        &:nth-child(3).pinky .title {
+            min-height: 84px;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .root {
+        &:first-child.mint .title,
+        &:first-child.sky .title,
+        &:nth-child(3).sky .title,
+        &:nth-child(2).pinky .title,
+        &:nth-child(3).pinky .title {
+            min-height: auto;
+        }
+    }
+    .ul {
+        padding: 20px 20px 20px 52px;
+        li {
+            max-width: 75%;
+        }
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        border-radius: 4px;
+        box-shadow: 8px 8px 0px 0px $btn-bg-dark-lilac;
+    }
+    .title {
+        padding: 12px 48px 12px 20px;
+        border-radius: 4px;
+        &.open {
+            border-radius: 4px 4px 0 0;
+        }
+        .arrow {
+            display: block;
+        }
+    }
+    .ul {
+        padding: 20px 20px 20px 48px;
+        display: none;
+        &.open {
+            display: flex;
+        }
+        li {
+            font-size: 14px;
+            &::before {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ul {
+        li {
+            max-width: 100%;
+        }
+    }
+}

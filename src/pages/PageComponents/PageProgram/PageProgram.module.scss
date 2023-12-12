@@ -1,0 +1,70 @@
+@import '../../../scss/buttons';
+
+.root {
+    padding: 0 0 120px;
+    &.lilac {
+        .title {
+            color: $clr-dark-lilac;
+        }
+        .btn {
+            @extend %btn-l-lilac-primary;
+        }
+    }
+    &.mint {
+        .title {
+            color: $clr-dark-mint;
+        }
+        .btn {
+            @extend %btn-l-mint-primary;
+        }
+    }
+    &.sky {
+        .title {
+            color: $clr-dark-sky;
+        }
+        .btn {
+            @extend %btn-l-sky-primary;
+        }
+    }
+    &.pinky {
+        .title {
+            color: $clr-dark-pinky;
+        }
+        .btn {
+            @extend %btn-l-pinky-primary;
+        }
+    }
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.title {
+    @extend %h3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.btn {
+    margin: 0 auto;
+    padding: 18px 56px !important;
+}
+
+@media (max-width: 1199.98px) {
+    .root {
+        padding: 0 0 100px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        padding: 0 0 80px;
+    }
+}

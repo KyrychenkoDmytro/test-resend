@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "train-courses",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.3",
+    "@react-email/components": "^0.0.12",
+    "@react-email/tailwind": "^0.0.13",
+    "@reduxjs/toolkit": "^2.0.1",
+    "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-redux": "^9.0.3",
     "resend": "^2.0.0",
-    "sass": "^1.69.5"
+    "swiper": "^11.0.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "sass": "^1.69.4",
     "typescript": "^5"
   }
 }

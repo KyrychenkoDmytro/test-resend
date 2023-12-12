@@ -1,0 +1,223 @@
+@import '../../../../scss/buttons';
+
+.root {
+    &.lilac {
+        .bg {
+            background: url(../../../../../public/images/pages/bg_form_level1.png) center center / cover no-repeat;
+        }
+        .price_block,
+        .form_block {
+            background: linear-gradient(133deg, rgba(215, 189, 249, 0.80) -19.82%, rgba(215, 189, 249, 0.00) 115.96%);
+        }
+        .price_buy,
+        .submit {
+            color: $clr-dark-lilac;
+            &:hover {
+                color: $clr-white;
+            }
+        }
+    }
+    &.mint {
+        .bg {
+            background: url(../../../../../public/images/pages/bg_form_level2.png) center center / cover no-repeat;
+        }
+        .price_block,
+        .form_block {
+            background: linear-gradient(112deg, rgba(153, 183, 180, 0.80) -3.91%, rgba(169, 191, 179, 0.00) 123.02%);
+        }
+        .price_buy,
+        .submit {
+            color: $clr-dark-mint;
+            &:hover {
+                color: $clr-white;
+            }
+        }
+    }
+    &.sky {
+        .bg {
+            background: url(../../../../../public/images/pages/bg_form_level3.png) center center / cover no-repeat;
+        }
+        .price_block,
+        .form_block {
+            background: linear-gradient(112deg, rgba(149, 193, 229, 0.50) -3.91%, rgba(149, 193, 229, 0.00) 123.02%);
+        }
+        .price_buy,
+        .submit {
+            color: $clr-dark-sky;
+            &:hover {
+                color: $clr-white;
+            }
+        }
+    }
+    &.pinky {
+        .bg {
+            background: url(../../../../../public/images/pages/bg_form_level4.png) center center / cover no-repeat;
+        }
+        .price_block,
+        .form_block {
+            background: linear-gradient(112deg, rgba(216, 184, 224, 0.50) -3.91%, rgba(216, 184, 224, 0.00) 123.02%);
+        }
+        .price_buy,
+        .submit {
+            color: $clr-dark-pinky;
+            &:hover {
+                color: $clr-white;
+            }
+        }
+    }
+}
+.wrapper {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.price_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(23.5px);
+}
+.price_title {
+    @extend %h4;
+    color: $clr-white;
+}
+.price_value {
+    @extend %h2;
+    color: $clr-beige;
+}
+.price_text {
+    @extend %h8;
+    color: $clr-white;
+    text-align: center;
+    margin-bottom: 12px;
+    max-width: 226px;
+    span {
+        font-weight: 700;
+    }
+}
+.price_buy {
+    @extend %btn-m-white-primary;
+}
+.form_block {
+    max-width: 690px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(23.5px);
+}
+.title {
+    @extend %h2;
+    color: $clr-white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text {
+    @extend %h6;
+    color: $clr-white;
+    text-align: center;
+    margin-bottom: 36px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.label {
+    @extend %h7;
+    color: $clr-white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    span {
+        font-size: 28px;
+        font-weight: 700;
+    }
+}
+.input {
+    height: 73px;
+    width: 100%;
+    input {
+        width: inherit;
+        height: inherit;
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-size: 20px;
+        color: $clr-white;
+        background-color: transparent;
+        border: 1px solid $btn-bg-light-beige;
+        cursor: pointer;
+        outline: none;
+        &:focus {
+            border: 2px solid $clr-light-beige;
+        }
+    }
+}
+.submit {
+    @extend %btn-m-white-primary;
+}
+.additional_information {
+    @extend %h8;
+    color: $clr-white;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        &.lilac,
+        &.mint,
+        &.sky,
+        &.pinky {
+            .wrapper {
+                padding: 40px 0;
+            }
+            .price_block {
+                padding: 20px;
+            }
+            .price_value {
+                font-size: 36px;
+            }
+            .price_text {
+                font-size: 16px;
+            }
+            .price_buy {
+                border-radius: 4px;
+            }
+            .form_block {
+                padding: 20px;
+            }
+            .title {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+            .text {
+                font-size: 14px;
+            }
+            .input {
+                height: 56px;
+                input {
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    border-radius: 4px;
+                }
+            }
+            .label {
+                font-size: 14px;
+                span {
+                    font-size: 16px;
+                }
+            }
+            .submit {
+                border-radius: 4px;
+            }
+        }
+    }
+   
+}

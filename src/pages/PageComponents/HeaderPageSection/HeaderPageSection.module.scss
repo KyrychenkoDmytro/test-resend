@@ -1,0 +1,341 @@
+@import '../../../scss/buttons';
+
+.root {
+    width: 100%;
+    height: 1024px;
+    &.lilac {
+        background: url(../../../../public/images/pages/bg_level1_header.png) center 28% / cover no-repeat;
+        .registration {
+            &:hover {
+                color: $clr-dark-lilac;
+            }
+            &:active {
+                color: $clr-dark-lilac;
+            }
+        }
+        .buy_course {
+            color: $clr-dark-lilac;
+            &:hover {
+                color: $clr-white;
+            }
+            &:active {
+                color: $clr-dark-lilac;
+            }
+        }
+        .limited {
+            color: $clr-dark-lilac;
+        }
+    }
+    &.mint {
+        background: url(../../../../public/images/pages/bg_level2_header.png) center 28% / cover no-repeat;
+        .registration {
+            &:hover {
+                color: $clr-dark-mint;
+            }
+            &:active {
+                color: $clr-dark-mint;
+            }
+        }
+        .buy_course {
+            color: $clr-dark-mint;
+            &:hover {
+                color: $clr-white;
+            }
+            &:active {
+                color: $clr-dark-mint;
+            }
+        }
+        .limited {
+            color: $clr-dark-mint;
+        }
+    }
+    &.sky {
+        background: url(../../../../public/images/pages/bg_level3_header.png) center 28% / cover no-repeat;
+        .registration {
+            &:hover {
+                color: $clr-dark-sky;
+            }
+            &:active {
+                color: $clr-dark-sky;
+            }
+        }
+        .buy_course {
+            color: $clr-dark-sky;
+            &:hover {
+                color: $clr-white;
+            }
+            &:active {
+                color: $clr-dark-sky;
+            }
+        }
+        .limited {
+            color: $clr-dark-sky;
+        }
+    }
+    &.pinky {
+        background: url(../../../../public/images/pages/bg_level4_header.png) center 28% / cover no-repeat;
+        .registration {
+            &:hover {
+                color: $clr-dark-pinky;
+            }
+            &:active {
+                color: $clr-dark-pinky;
+            }
+        }
+        .payment_link {
+            display: none;
+        }
+        .limited {
+            color: $clr-dark-pinky;
+        }
+        .wrapper {
+            margin-top: 246px;
+        }
+        .valid_until {
+            display: none;
+        }
+        .price {
+            span {
+                @extend %h11;
+                display: block;
+                color: $clr-white;
+                max-width: 306px;
+            }
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 174px;
+}
+.subtitle {
+    @extend %h4;
+    color: $clr-white;
+    margin-bottom: 12px;
+}
+.title {
+    @extend %h2;
+    color: $clr-beige;
+    margin-bottom: 12px;
+}
+.content {
+    @extend %h9;
+    max-width: 492px;
+    text-align: center;
+    color: $clr-white;
+    margin-bottom: 28px;
+    span {
+        font-weight: 700;
+    }
+}
+.buttons_wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.registration {
+    @extend %btn-m-white-secondary;
+}
+.buy_course {
+    @extend %btn-m-white-primary;
+}
+.course_details {
+    display: flex;
+    gap: 90px;
+}
+.date_block,
+.duration_block {
+    div {
+        @extend %h4;
+        color: $clr-beige;
+    }
+    span {
+        @extend %h8;
+        color: $clr-white;
+    }
+}
+.price_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    margin-bottom: 8px;
+}
+.price {
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        height: 80%;
+        width: 2px;
+        background-color: $clr-white;
+        position: absolute;
+        top: 8px;
+        right: -16px;
+        transform: rotate(20deg);
+    }
+    div {
+        @extend %h4;
+        color: $clr-beige;
+    }
+    span {
+        @extend %h8;
+        color: $clr-white;
+    }
+}
+.valid_until {
+    max-width: 134px;
+    @extend %h11;
+    font-weight: 500;
+    color: $clr-white;
+    span {
+        font-weight: 700;
+    }
+}
+.limited {
+    @extend %h10;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: $btn-bg-light-beige;
+    max-width: max-content;
+}
+
+@media (max-width: 1199.98px) {
+    .root{
+        .subtitle {
+            font-size: 28px;
+        }
+        .title {
+            font-size: 40px;
+        }
+        .course_details {
+            width: 100%;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+        .date_block,
+        .duration_block {
+            div {
+                font-size: 28px;
+            }
+        }
+        .price {
+            div {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .root {
+        &.pinky {
+            .price {
+                span {
+                    max-width: 224px;
+                }
+            }
+        }
+        .buttons_wrapper {
+            margin-bottom: 100px;
+        }
+        .course_details {
+            justify-content: space-between;
+        }
+        .date_block,
+        .duration_block {
+            div {
+                font-size: 24px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+        .price_wrapper {
+            gap: 24px;
+        }
+        .price {
+            &::after {
+                right: -12px;
+            }
+            div {
+                font-size: 24px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+        .limited {
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        &.lilac{
+            background-position:40% 50%;
+        }
+        &.pinky {
+            background-position:17.5% 50%;
+            .wrapper {
+                margin-top: 160px;
+            }
+            .content {
+                max-width: 300px;
+            }
+        }
+        .wrapper {
+            margin-top: 128px;
+        }
+        .subtitle {
+            font-size: 20px;
+        }
+        .title {
+            font-size: 36px;
+            text-align: center;
+        }
+        .content {
+            font-size: 14px;
+            margin-bottom: 36px;
+        }
+        .buttons_wrapper {
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 56px;
+            a {
+                flex: 0 1 65%;
+                &:first-child {
+                    order: 2;
+                }
+            }
+        }
+        .buy_course,
+        .registration {
+            border-radius: 4px;
+            width: 100%;
+        }
+        .course_details {
+            flex-direction: column;
+            gap: 36px;
+        }
+        .date_block,
+        .duration_block {
+            div {
+                font-size: 28px;
+            }
+        }
+        .price {
+            div {
+                font-size: 28px;
+            }
+        }
+    }
+}

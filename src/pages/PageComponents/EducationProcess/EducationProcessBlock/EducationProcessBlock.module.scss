@@ -1,0 +1,90 @@
+@import '../../../../scss/variables';
+
+.root {
+    width: 408px;
+    min-height: 178px;
+    padding: 28px 40px;
+    border-radius: 8px;
+    background-color: $btn-bg-white;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.08);
+    position: relative;
+    align-self: start;
+    &.lilac {
+        border: 2px solid $btn-bg-lilac;
+        .name {
+            color: $clr-dark-lilac;
+        }
+    }
+    &.mint {
+        border: 2px solid $btn-bg-mint;
+        .name {
+            color: $clr-dark-mint;
+        }
+    }
+    &.sky {
+        border: 2px solid $btn-bg-sky;
+        .name {
+            color: $clr-dark-sky;
+        }
+    }
+    &.pinky {
+        border: 2px solid $btn-bg-pinky;
+        .name {
+            color: $clr-dark-pinky;
+        }
+        .text {
+            ul {
+                list-style-type: disc;
+                margin-bottom: 20px;
+                li {
+                    margin-left: 28px;
+                }
+            }
+            div {
+                font-size: 14px;
+                color: $clr-dark-pinky;
+            }
+        }
+    }
+}
+.name {
+    @extend %h6;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.text {
+    @extend %h9;
+    color: $clr-dark-violet;
+    span {
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        min-height: 157px;
+        padding: 28px 36px;
+        width: 360px;
+        &.pinky {
+            .text {
+                div {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .name {
+       font-size: 20px; 
+    }
+    .text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .root {
+        max-width: 360px;
+        margin: 0 auto;
+        width: auto;
+    }
+}

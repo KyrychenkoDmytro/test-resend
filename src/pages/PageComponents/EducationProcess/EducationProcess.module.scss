@@ -1,0 +1,232 @@
+@import '../../../scss/variables';
+
+.root {
+    padding: 0 0 120px;
+    position: relative;
+    &.lilac {
+        .wrapper {
+            max-height: 666px;
+        }
+        .title {
+            color: $clr-dark-lilac;
+        }
+        .img {
+            background: url(../../../../public/images/pages/education-process-level1.png) center center / cover no-repeat;
+            top: 230px;
+        }
+    }
+    &.mint {
+        .wrapper {
+            max-height: 706px;
+        }
+        .title {
+            color: $clr-dark-mint;
+        }
+        .img {
+            background: url(../../../../public/images/pages/education-process-level2.png) center center / cover no-repeat;
+        }
+    }
+    &.sky {
+        .wrapper {
+            max-height: 686px;
+        }
+        .title {
+            color: $clr-dark-sky;
+        }
+        .img {
+            background: url(../../../../public/images/pages/education-process-level3.png) center center / cover no-repeat;
+            top: 315px;
+        }
+    }
+    &.pinky {
+        .wrapper {
+            max-height: 680px;
+        }
+        .title {
+            color: $clr-dark-pinky;
+        }
+        .img {
+            background: url(../../../../public/images/pages/education-process-level4.png) center center / cover no-repeat;
+            top: 238px;
+        }
+        .block:nth-child(4) {
+            top: 45px;
+            right: 25px;
+        }
+        .block:nth-child(5) {
+            top: -160px;
+        }
+    }
+}
+.title_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.title {
+    @extend %h3;
+    text-align: center;
+}
+.subtitle {
+    @extend %h7;
+    text-align: center;
+    margin-bottom: 40px;
+    color: $clr-dark-violet;
+    margin: 0 auto;
+    span {
+        display: block;
+        font-weight: 700;
+    }
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    position: relative;
+    align-items: stretch;
+    align-content: start;
+    grid-auto-rows: minmax(178px, auto);
+}
+.img {
+    width: 420px;
+    height: 360px;
+    position: absolute;
+    top: 262px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+//EducationProcessBlock
+.block:nth-child(2),
+.block:nth-child(4) {
+    margin-left: auto;
+}
+.block:first-child {
+    top: 0px;
+    left: 144px;
+}
+.block:nth-child(2) {
+    top: 45px;
+    right: 107px;
+}
+.block:nth-child(3) {
+    top: -5px;
+    left: 30px;
+}
+.block:nth-child(4) {
+    top: 70px;
+    right: 25px;
+}
+.block:nth-child(5) {
+    top: -20px;
+    left: 340px;
+}
+
+@media (max-width: 1439.98px) {
+    .root {
+        &.pinky {
+            .wrapper {
+                max-height: 660px;
+            }
+            .img {
+                top: 260px;
+            }
+            .block:nth-child(4) {
+                right: 0px;
+            }
+            .block:nth-child(5) {
+                top: -120px;
+            }
+        }
+    }
+    .wrapper {
+        gap: 40px 60px;
+    }
+    .block:first-child {
+        top: 0;
+        left: 60px;
+    }
+    .block:nth-child(2) {
+        top: 35px;
+        right: 30px;
+    }
+    .block:nth-child(3) {
+        top: 0px;
+        left: 0px;
+    }
+    .block:nth-child(4) {
+        top: 60px;
+        right: 0px;
+    }
+    .block:nth-child(5) {
+        top: 0px;
+        left: 160px;
+    }
+    .img {
+        width: 320px;
+        height: 275px;
+        left: 48.7%;
+    }
+    }
+
+@media (max-width: 1199.98px) {
+    .root {
+        padding: 0 0 100px;
+        &.lilac,
+        &.mint,
+        &.sky,
+        &.pinky {
+            .wrapper {
+                max-height: 100%;
+            }
+            .wrapper {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+            }
+            .block:first-child {
+                order: 1;
+                top: 0px;
+                left: 0px;
+            }
+            .block:nth-child(2) {
+                order: 2;
+                top: 0px;
+                right: 0px;
+            }
+            .block:nth-child(3) {
+                order: 5;
+                top: 0px;
+                left: 0px;
+            }
+            .block:nth-child(4) {
+                order: 4;
+                top: 0px;
+                right: 0px;
+            }
+            .block:nth-child(5) {
+                order: 3;
+                top: 0px;
+                left: 0px;
+            }
+            .img {
+               display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .subtitle {
+        display: none;
+    }
+}
+
+@media (max-width: 759.98px) {
+    .root {
+        padding: 0 0 80px;
+        .wrapper {
+            grid-auto-rows: minmax(157px, auto);
+        }
+    }
+}

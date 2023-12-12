@@ -32,6 +32,11 @@ button {
   border: none;
   cursor: pointer;
 }
+input::placeholder,
+textarea::placeholder {
+  opacity: 0.7;
+  color: #d9f5f5;
+}
 
 .container {
   max-width: 1440px;
